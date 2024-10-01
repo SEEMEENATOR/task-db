@@ -114,3 +114,5 @@ values
 
 select * from Orders;
 
+drop table if exists Orders;
+drop table if exists Customers;
