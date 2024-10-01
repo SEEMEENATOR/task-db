@@ -73,3 +73,24 @@ limit 1;
 
 select min(amount) AS cheapest_ticket_price, max(amount) AS most_expensive_ticket_price
 from bookings.ticket_flights;
+
+create table Customers (
+id SERIAL primary key,
+firstName varchar(50) not null,
+lastName varchar(50) not null,
+email varchar(100) unique not null,
+phone varchar(50),
+constraint email_format check (email like '%_@__%.__%')
+);
+
+
+create table Orders (
+id SERIAL primary key,
+customerId INT not null,
+quantity INT check (quantity > 0),
+constraint fk_customers
+foreign key (customerId)
+references Customers(id)
+on delete cascade
+);
+
