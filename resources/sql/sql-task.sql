@@ -94,3 +94,23 @@ references Customers(id)
 on delete cascade
 );
 
+insert into Customers (firstName, lastName, email, phone)
+values
+('Maksim', 'Khimiak', 'maks@gmail.com', '+375-29-123-23-32'),
+('Ruslan', 'Frolov', 'rusik@gmail.com', '+375-43-43-53-72'),
+('Maksim', 'Rudakov', 'maksRud@gmail.com', '+7-938-302-24-62'),
+('Dmitry', 'Molchanov', 'dmmolch@yandex.ru', '+375-22-167-11-22'),
+('Alena', 'Kyzmina', 'Ala@mail.ru', '+7-925-333-22-12');
+
+select * from Customers;
+
+insert into Orders (customerId, quantity)
+values
+(1,10),
+(2,5),
+(3,1),
+(4,8),
+(5,15);
+
+select * from Orders;
+
